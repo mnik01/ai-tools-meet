@@ -1,601 +1,195 @@
 ---
-# try also 'default' to start simple
-theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
-# some information about your slides, markdown enabled
-title: Welcome to Slidev
-info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
-# apply any unocss classes to the current slide
-class: text-center
-# https://sli.dev/custom/highlighters.html
-highlighter: shiki
-# https://sli.dev/guide/drawing
-drawings:
-  persist: false
-# slide transition: https://sli.dev/guide/animations#slide-transitions
-transition: slide-left
-# enable MDC Syntax: https://sli.dev/guide/syntax#mdc-syntax
-mdc: true
+title: Ликбез по AI инструментам ✨
+hideInToc: true
 ---
 
-# Welcome to Slidev
+# Ликбез по AI инструментам ✨
 
-Presentation slides for developers
-
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
-  </span>
-</div>
-
-<div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub" title="Open in GitHub"
-    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-github />
-  </a>
-</div>
+LLM в частности и Q&A сессия
 
 <!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
+- [ ] Начать запись
+- [ ] Скинуть ссылки в чат
 -->
 
 ---
-transition: fade-out
+hideInToc: true
 ---
 
-# What is Slidev?
+# Кто Я
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
+## Никонов Максим -  Senior Frontend Developer
+Имею опыт использования различных AI тулов и не большой опыт работы с OpenAI API
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
+@mnik01
 
-<br>
-<br>
-
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
-
-<!--
-Here is another comment.
+<!-- 
+- не эксперт
+- могу ошибаться 
+- основываюсь на источниках (ссылки в презентации)
 -->
 
 ---
-transition: slide-up
-level: 2
+hideInToc: true
 ---
 
-# Navigation
+# Кто Вы
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
+Для кого этот доклад?: В бОльшей степени для разработчиков (любого уровня), для мэнэджеров и HR специалистов в меньшей степени. Не будет грубокого погружения в код
 
-## Keyboard Shortcuts
-
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
-
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+<!-- входные знания особо не требуются -->
 
 ---
-layout: two-cols
-layoutClass: gap-16
+hideInToc: true
 ---
 
-# Table of contents
+# Время и Регламент
 
-You can use the `Toc` component to generate a table of contents for your slides:
+- Займет N минут + M на Q&A
+- Вопросы во время Q&A секций
+- Легенда презентации: снизу номера страниц x/y, в teams сверху время сколько уже идёт мит
 
-```html
-<Toc minDepth="1" maxDepth="1"></Toc>
-```
-
-The title will be inferred from your slide content, or you can override it with `title` and `level` in your frontmatter.
-
-::right::
-
-<Toc v-click minDepth="1" maxDepth="2"></Toc>
+<Counter />
 
 ---
-layout: image-right
-image: https://cover.sli.dev
+hideInToc: true
 ---
 
-# Code
+# План
 
-Use code snippets and get the highlighting directly, and even types hover![^1]
-
-```ts {all|5|7|7-8|10|all} twoslash
-// TwoSlash enables TypeScript hover information
-// and errors in markdown code blocks
-// More at https://shiki.style/packages/twoslash
-
-import { computed, ref } from 'vue'
-
-const count = ref(0)
-const doubled = computed(() => count.value * 2)
-
-doubled.value = 2
-```
-
-<arrow v-click="[4, 5]" x1="350" y1="310" x2="195" y2="334" color="#953" width="2" arrowSize="1" />
-
-<!-- This allow you to embed external code blocks -->
-<<< @/snippets/external.ts#snippet
-
-<!-- Footer -->
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
-
-<!-- Inline style -->
-<style>
-.footnotes-sep {
-  @apply mt-5 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
-
-<!--
-Notes can also sync with clicks
-
-[click] This will be highlighted after the first click
-
-[click] Highlighted with `count = ref(0)`
-
-[click:3] Last click (skip two clicks)
--->
-
----
-level: 2
----
-
-# Shiki Magic Move
-
-Powered by [shiki-magic-move](https://shiki-magic-move.netlify.app/), Slidev supports animations across multiple code snippets.
-
-Add multiple code blocks and wrap them with <code>````md magic-move</code> (four backticks) to enable the magic move. For example:
-
-````md magic-move
-```ts {*|2|*}
-// step 1
-const author = reactive({
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-})
-```
-
-```ts {*|1-2|3-4|3-4,8}
-// step 2
-export default {
-  data() {
-    return {
-      author: {
-        name: 'John Doe',
-        books: [
-          'Vue 2 - Advanced Guide',
-          'Vue 3 - Basic Guide',
-          'Vue 4 - The Mystery'
-        ]
-      }
-    }
-  }
-}
-```
-
-```ts
-// step 3
-export default {
-  data: () => ({
-    author: {
-      name: 'John Doe',
-      books: [
-        'Vue 2 - Advanced Guide',
-        'Vue 3 - Basic Guide',
-        'Vue 4 - The Mystery'
-      ]
-    }
-  })
-}
-```
-
-Non-code blocks are ignored.
-
-```vue
-<!-- step 4 -->
-<script setup>
-const author = {
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-}
-</script>
-```
-````
+<Toc columns="1" maxDepth="1"></Toc>
 
 ---
 
-# Components
+# Что такое AI инструменты и какие бывают?
 
-<div grid="~ cols-2 gap-4">
-<div>
+AI тулы — это тулы которые используют AI
 
-You can use Vue components directly inside your slides.
+Это просто инструменты. Это не silver bullet от всех проблем. Но зная о существовании разных тулов в случае проблемы вы можете вспомнить про них и заюзать. (причем инструмент со своей спецификой: галлюцинации)
 
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
+У инструментов есть задачи которые они решают, к некоторым задачам инструмент подойдет к некоторым нет.
 
-```html
-<Counter :count="10" />
-```
+Лучше всего работает там где вы можете пробовать + методом тыка и перебора найти решение, а не там где четко требуется с первого раза получить надежный результат.
 
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
 
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
--->
-
----
-class: px-20
----
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true" alt="">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true" alt="">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
+AI (ИИ Иску́сственный интелле́кт) -- это широкое понятие включающее в себя много технологий и подходов (нейросети, LLMки, машинное обучение). 
 
 ---
 
-# Clicks Animations
-
-You can add `v-click` to elements to add a click animation.
-
-<div v-click>
-
-This shows up when you click the slide:
-
-```html
-<div v-click>This shows up when you click the slide.</div>
-```
-
-</div>
-
-<br>
-
-<v-click>
-
-The <span v-mark.red="3"><code>v-mark</code> directive</span>
-also allows you to add
-<span v-mark.circle.orange="4">inline marks</span>
-, powered by [Rough Notation](https://roughnotation.com/):
-
-```html
-<span v-mark.underline.orange>inline markers</span>
-```
-
-</v-click>
-
-<div mt-20 v-click>
-
-[Learn More](https://sli.dev/guide/animations#click-animations)
-
-</div>
-
----
-preload: false
----
-
-# Motions
-
-Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), triggered by `v-motion` directive.
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
-```
-
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-      alt=""
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn More](https://sli.dev/guide/animations.html#motion)
-
-</div>
-
----
-
-# LaTeX
-
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
-
-<br>
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$ {1|3|all}
-\begin{array}{c}
-
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
-<br>
-
-[Learn more](https://sli.dev/guide/syntax#latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-4 gap-5 pt-4 -mb-6">
-
-```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
+Разделим AI тулы на 3 группы:
 
 ```mermaid
-mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectivness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
+graph TD;
+    AI-инструменты --> Видео ---> A[Sora];
+    AI-инструменты --> Фото ---> B[Dall-e, Midjourney, StableDiffusion];
+    AI-инструменты --> Текстовые ---> C[ChatGPT 3/4, Gemini, Copilot, Claude];
 ```
 
-```plantuml {scale: 0.7}
-@startuml
+--- 
 
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
+## Что такое LLM и какие бывают?
 
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
+LLM это инструмент который генерирует текст в ответ на запрос пользователя (prompt)
 
-cloud {
-  [Example 1]
-}
+Разобъём LLM на виды так:
 
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
+```mermaid
+graph TD;
+    LLM --> A[текстовые];
+    LLM --> B[текстовые+];
+    LLM --> C[с интеграцией в кодовую базу];
 ```
 
+Так или иначе они все сводятся к тексту (answer —> question)
+
+---
+
+<div class="flex gap-4">
+  <div>
+    <span>Текстовые</span>
+    <img class="w-68" src="image.png"/>
+  </div>
+
+  <div class="flex flex-col gap-2">
+    <span>Текстовые+</span>
+    <span class="text-stone-500">web browsing, pdf reader, интеграции и т.д.</span>
+    <img class="w-89" src="image-1.png"/>
+  </div>
+  
+  <div class="flex flex-col gap-2">
+    <span>Текстовые+</span>
+    <span class="text-stone-500">web browsing, pdf reader, интеграции и т.д.</span>
+    <img class="w-92" src="image-2.png"/>
+  </div>
 </div>
 
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
-
----
-src: ./pages/multiple-entries.md
-hide: false
 ---
 
+# Как работают LLMки
+
+В сути LLM это 2 файла: файл с параметрами, который весит очень много и очень сложно добывается, и файл с кодом нейросети что бы генерировать ответы используя эти параметры.
+
+<img class="w-62" src="image-3.png"/>
+
+Эта модель может быть установлена на ваш компьютер локально и использоваться без интернета.
+
+А можно и написать API и веб сервис для доступа к этим двум файлам. Так и работают веб-интерфейсы LLM'ок (chatgpt, gemini и тд)
+
+--- 
+
+### Как генерируется ответ
+Нейросеть занимается предсказыванием наиболее вероятного следующего слова в предложении и его выдачей. Так она делает раз за разом выдавая новые слова (токены).
+
+Предсказание того как слово будет следующим делается на основе параметров (весов) и контекста разговора.
+
+--- 
+
+### Что такое параметры
+
+Вы можете думать о параметрах как о сжатом (с потерями) куске интернета. Берётся большой объём (10TB-100TB) текстов из интернета (reddit, stackoverflow и др.) и "сжимается" в 140 гигабайтный файл с весами (просто числа) для нейросети.
+
+> На самом деле происходит не буквально сжатие. А всякая магия математики.
+
+Это просто входные настройки модели. Чем больше параметров и чем они разнообразнее тем лучше (медленнее и дороже). И более того при большом объеме входных токенов и большом "контекстном окне" модели из-за эмерджентности обретают неожиданные свойства: способность переводить тексты, сочинять стихи, "мыслить", решать математические задачи.
+
+> Из-за того что кусок интернета для тренировки модели был на английском преимущественно то и работать она будет лучше на английском
+
 ---
 
-# Monaco Editor
+### Почему возникают галлюцинации
 
-Slidev provides built-in Moanco Editor support.
+LLM'ка на выходе (после генерации параметров) уже не имеет всей информации об исходном куске интернета на котором ее тренировали, но умеет (настроена) прогнозировать следующее слово в последовательности.
 
-Add `{monaco}` to the code block to turn it into an editor:
+<img class="w-152" src="image-6.png"/>
 
-```ts {monaco}
-import { ref } from 'vue'
-import hello from './external'
+---
 
-const code = ref('const a = 1')
-hello()
+
+Поэтому она может не знать точно когда родилась Индира Ганди, но по форме предложения "понять" что надо подставить цифру:
+
+```md
+Q: Когда родилась Индира Ганди?
+A: Индира Ганди родилась в 1917 году
 ```
 
-Use `{monaco-run}` to create an editor that can execute the code directly in the slide:
+Поэтому ответы LLMки чисто **вероятностные**, а не точные. И могут выдавать совершенно не логичные ответы по той или иной причине:
 
-```ts {monaco-run}
-function fibonacci(n: number): number {
-  return n <= 1
-    ? n
-    : fibonacci(n - 1) + fibonacci(n - 2) // you know, this is NOT the best way to do it :P
-}
-
-console.log(Array.from({ length: 10 }, (_, i) => fibonacci(i + 1)))
-```
+<img class="w-82" src="image-5.png"/>
 
 ---
-layout: center
-class: text-center
+
+# Как это всё применять?
+
 ---
 
-# Learn More
+# Privacy and security concerns
 
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+---
+
+# Бонус: лайфхаки как составлять промпты
+
+---
+
+# Q&A
+
+@mnik01
