@@ -5,7 +5,7 @@ hideInToc: true
 
 # AI  assistants — Quick start ✨
 
-Доклад про AI иструменты, а именно — LLM
+Доклад про AI иструменты, в частности — LLM модели
 
 <!--
 - [ ] Начать запись

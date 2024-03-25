@@ -1,11 +1,11 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
+# AI  assistants — Quick start ✨
 
-To start the slide show:
+Доклад про AI иструменты, в частности — LLM модели
 
-- `npm install`
-- `npm run dev`
-- visit http://localhost:3030
+Слайды находятся в файле `slides.md`
 
-Edit the [slides.md](./slides.md) to see the changes.
+Запуск презентации локально: 
+1. `pnpm i`
+2. `pnpm dev`
 
-Learn more about Slidev on [documentations](https://sli.dev/).
+Работает ли с npm -- не знаю.
