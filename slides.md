@@ -98,7 +98,7 @@ LLM (large language model) — это AI инструмент, который г
 - по интерфейсу чаще всего представляют из себя чат/диалоговое окно, в котором вы можете общаться с моделью
 -->
 
-<img class="w-54" src="image.png"/>
+<img class="w-54" src="/image.png"/>
 
 <!--  -->
 
@@ -109,18 +109,18 @@ LLM (large language model) — это AI инструмент, который г
 <div class="flex mt-4 gap-4">
   <div>
     <span>Текстовые</span>
-    <img class="w-68" src="image.png"/>
+    <img class="w-68" src="/image.png"/>
   </div>
 
   <div class="flex flex-col gap-2">
     <span>Текстовые +</span>
     <span class="text-stone-500">web browsing, pdf reader, интеграции и т.д.</span>
-    <img class="w-89" src="image-1.png"/>
+    <img class="w-89" src="/image-1.png"/>
   </div>
   
   <div class="flex flex-col gap-2">
     <span>Code-base integrated</span>
-    <img class="w-92" src="image-2.png"/>
+    <img class="w-92" src="/image-2.png"/>
   </div>
 </div>
 
@@ -128,7 +128,7 @@ LLM (large language model) — это AI инструмент, который г
 
 ## Code-base integrated
 
-<img class="w-122 ml-40" src="image-22.png"/>
+<img class="w-122 ml-40" src="/image-22.png"/>
 
 
 <!-- Так или иначе они все сводятся к тексту (answer —> question) -->
@@ -149,7 +149,7 @@ LLM (large language model) — это AI инструмент, который г
 
 В сути, LLM — это 2 файла: файл с настройками и файл с кодом нейросети.
 
-<img class="w-86 absolute left-82" src="image-3.png"/>
+<img class="w-86 absolute left-82" src="/image-3.png"/>
 
 <!--  -->
 
@@ -159,9 +159,9 @@ LLM (large language model) — это AI инструмент, который г
 
 Нейросеть занимается предсказыванием наиболее вероятного следующего слова в предложении. Похоже на T9 в телефоне
 
-<img class="w-82 absolute left-10 top-50" src="image-13.png"/>
+<img class="w-82 absolute left-10 top-50" src="/image-13.png"/>
 
-<img class="w-122 absolute right-20 top-50" src="image-6.png"/>
+<img class="w-122 absolute right-20 top-50" src="/image-6.png"/>
 
 <!--  -->
 
@@ -173,7 +173,7 @@ LLM (large language model) — это AI инструмент, который г
 
 <!-- Берётся большой объём (10TB-100TB) текстов из интернета (reddit, stackoverflow и др.) и условно говоря "сжимается" в примерно 140 гигабайтный файл настроек для нейросети -->
 
-<img class="w-162" src="image-10.png"/>
+<img class="w-162" src="/image-10.png"/>
 
 <!-- На самом деле происходит не буквально сжатие, а обучение (настройка) нейросети -->
 
@@ -190,7 +190,7 @@ Q: Когда родилась Индира Ганди?
 A: Индира Ганди родилась в 1928 году
 ```
 
-<img class="w-42" src="image-12.png"/>
+<img class="w-42" src="/image-12.png"/>
 
 <!-- Разобрать пример -->
 
@@ -242,8 +242,8 @@ LLM -- ассистент и ускоритель
 
 
 <div class="flex mt-4 gap-2">
-  <img class="w-92" src="image-14.png"/>
-  <img class="w-92" src="image-15.png"/>
+  <img class="w-92" src="/image-14.png"/>
+  <img class="w-92" src="/image-15.png"/>
 </div>
 
 <!--
@@ -264,14 +264,14 @@ LLM -- ассистент и ускоритель
 </svg>
 
 
-<img class="w-82" src="image-16.png"/>
+<img class="w-82" src="/image-16.png"/>
 
 <!-- 
 1. Модель может обучаться на ваших данных
 2. Данные передаются по сети и через апи, и переписки хранятся у OpenAI 
 -->
 
-<img class="w-82 absolute top-35 right-50" src="image-17.png"/>
+<img class="w-82 absolute top-35 right-50" src="/image-17.png"/>
 
 
 <!-- Если вы передаете данные пользователей в сторонние сервисы и точнее LLMки то опишите это в пользовательском соглашении (я не юрист) -->
@@ -283,14 +283,14 @@ LLM -- ассистент и ускоритель
 
 ## Кодовая база
 
-![alt text](image-18.png)
+![alt text](/image-18.png)
 
 
 ---
 
 ## Data leakage 
 
-![alt text](image-19.png)
+![alt text](/image-19.png)
 
 ```md
 --- END OF TEXT ---
@@ -337,7 +337,7 @@ https://hacker-site и
 
 Репутационный урон и юридические риски
 
-<img class="w-82" src="image-20.png"/>
+<img class="w-82" src="/image-20.png"/>
 
 <!-- 
 Допустим вы на сайт добавили LLM бота для объяснения вашего продукта 
