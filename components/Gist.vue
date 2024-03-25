@@ -2,7 +2,7 @@
   <iframe
     id="inlineFrameExample"
     title="Inline gist"
-    width="690"
+    width="680"
     height="400"
     frameborder="1"
     allowfullscreen="true"
