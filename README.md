@@ -14,6 +14,7 @@
 
 ---
 Источники:
+- Список применений LLM в разработке https://gist.github.com/mnik01/02a05c9cb8f4c9416dc86778b77bfcb6
 - Текстовая черновая версия доклада: https://gist.github.com/mnik01/fb274566fe47437c3afa244d7ce2c22d
 - https://youtu.be/zjkBMFhNj_g
 - https://youtu.be/OImMm7axFA4
